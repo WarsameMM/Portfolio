@@ -1,0 +1,122 @@
+// https://dbdiagram.io/
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table Students {
+  username varchar [primary key]
+  password varchar [not null]
+  first_name varchar [not null]
+  last_name varchar [not null]
+  class integer [not null] // 0: Freshman, 1: Sophomore, 2: Junior, 3: Senior
+  department varchar [not null]
+}
+
+Table Professors {
+  id integer unique [primary key]
+  first_name varchar [not null]
+  last_name varchar [not null]
+}
+
+/*
+Table Classes {
+  id integer [primary key]
+  name varchar [not null]
+  department varchar [not null]
+  code integer [not null]
+  level integer [not null]
+  professor_id integer [not null]
+  credits integer [not null]
+  min_class integer [not null] // check class standing
+  M bool [not null]
+  T bool [not null]
+  W bool [not null]
+  Th bool [not null]
+  F bool [not null]
+  start integer [not null]
+  end integer [not null]
+  max_seats integer [not null]
+  seats_taken integer [not null]
+}
+
+Table Prerequesites {
+  class_name integer [not null]
+  prerequesite_name integer [not null]
+}
+
+Table ClassesTaken {
+  student_id integer [not null]
+  class_name integer [not null]
+}
+
+*/
+
+Table Enrollment {
+  id integer [primary key]
+  student_id integer [not null]
+  class_id integer [not null]
+  date datetime [not null]
+}
+
+// Functional Dependencies and BCNF Decomposition
+// Students
+//  id -> every attribute
+// Teachers
+//  id -> every attribute
+// Classes
+//  id -> every attribute
+//  name -> department, course_code, credits, level, min_class
+//  Decompose Classes into Classes(name, credits, department, course_code, level, min_class) and OfferedClasses(id, name, [Days], start, end, seats, max_seats, seats_taken)
+//  tables are in BCNF form
+// Enrollment
+//  id -> every attribute
+// ClassesTaken
+//  No FDs
+// Prerequesites
+//  No FDs
+// All tables are in BCNF form
+
+Table Classes {
+  name varchar [primary key]
+  department varchar [not null]
+  code integer [not null]
+  credits integer [not null]
+  level integer [not null]
+  min_class integer [not null] // check class standing
+  description varchar [not null]
+}
+
+Table ClassesOffered {
+  id integer [primary key]
+  name varchar [not null]
+  professor_id integer [not null]
+  start integer [not null]
+  end integer [not null]
+  max_seats integer [not null]
+  seats_taken integer [not null]
+}
+
+Table DaysOffered {
+  class_id integer [not null]
+  day varchar [not null]
+}
+
+Table Prerequesites {
+  class_name integer [not null]
+  prerequesite_name integer [not null]
+}
+
+Table ClassesTaken {
+  student_id integer [not null]
+  class_name varchar [not null]
+}
+
+
+Ref: Classes.name < ClassesOffered.name
+Ref: ClassesOffered.professor_id > Professors.id
+Ref: Students.id < Enrollment.student_id
+Ref: Enrollment.class_id > ClassesOffered.id
+Ref: ClassesTaken.student_id > Students.id
+Ref: ClassesTaken.class_name > Classes.name
+Ref: Prerequesites.class_name > Classes.name
+Ref: Prerequesites.prerequesite_name > Classes.name
+Ref: DaysOffered.class_id > ClassesOffered.id

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+  Name: Warasame Mahdi
+  Date: November 2, 2025
+  Section: CSE 154 AB
+  TA: Tia-Jane Zhang Fowler
+  This is the html for the login page. It has a header and a form with a username
+  and password login that cant be sent empty.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>School Enrollment Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="display.css">
+    <link rel="stylesheet" href="password.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+     rel="stylesheet">
+    <script src="login.js"></script>
+  </head>
+  <body>
+    <header id="login">
+      <h1>Log In</h1>
+    </header>
+    <p id='error' class='hidden'>The username or password is incorrect.</p>
+    <section id="login">
+      <form class="bar">
+        <label for="username">Username</label>
+        <input id='username' name="username" type='text' required>
+        <label for="password">Password</label>
+        <div>
+        <input id='password' name="password" type='password' required>
+        <img src="img/show-password.png" rel="toggle-password-display">
+        </div>
+        <button id='sign-in'>Sign In</button>
+      </form>
+    </section>
+  </body>
+</html>

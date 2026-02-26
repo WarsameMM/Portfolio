@@ -1,0 +1,83 @@
+POST http://localhost:8000/account/login
+Content-Type: application/json
+
+{
+  "username": "JApple",
+  "password": "password"
+}
+
+###
+
+POST http://localhost:8000/account/login
+Content-Type: application/json
+
+{
+  "username": "nonexistent",
+  "password": "nonexistent"
+}
+
+###
+GET http://localhost:8000/search?all=true
+Content-Type: application/json
+
+###
+GET http://localhost:8000/search/1
+Content-Type: application/json
+
+###
+GET http://localhost:8000/search?department=math
+Content-Type: application/json
+
+###
+POST http://localhost:8000/account/enrolled
+Content-Type: application/json
+
+{
+  "studentID" : 1
+}
+
+
+###
+POST http://localhost:8000/account/enroll
+Content-Type: application/json
+
+{
+  "studentID" : 1,
+  "cart": "[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]"
+}
+
+### offered ids 2 and 7 have conflicting times
+POST http://localhost:8000/account/enroll
+Content-Type: application/json
+
+{
+  "studentID" : 1,
+  "cart": "[2, 7]"
+}
+
+### 21 needs 18 and 19. studentID has taken 18 and class standing isn't high enough
+POST http://localhost:8000/account/enroll
+Content-Type: application/json
+
+{
+  "studentID" : 1,
+  "cart": "[21]"
+}
+
+### studentID 1 has 6 enrolled in and 6 is full
+POST http://localhost:8000/account/enroll
+Content-Type: application/json
+
+{
+  "studentID" : 1,
+  "cart": "[6]"
+}
+
+### nonexistent class
+POST http://localhost:8000/account/enroll
+Content-Type: application/json
+
+{
+  "studentID" : 1,
+  "cart": "[-6]"
+}

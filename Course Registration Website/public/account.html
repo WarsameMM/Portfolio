@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+  Name: Warasame Mahdi
+  Date: November 2, 2025
+  Section: CSE 154 AB
+  TA: Tia-Jane Zhang Fowler
+  This is the html for the account page. it has a header with a logout button, a cart
+  for the users classes, an enrolled section for the users enrolled classes and settings.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Account Page</title>
+    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="display.css">
+    <link rel="stylesheet" href="password.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+     rel="stylesheet">
+    <script src="account.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <span>
+        <img src="img/home.png" alt="home button" id="home-btn">
+      </span>
+      <h1>My Account</h1>
+      <div>
+        <span id="username"></span>
+        <span id="logout">
+          <p>Logout</p>
+          <img src="img/logout.png" alt="logout button">
+        </span>
+      </div>
+    </header>
+
+    <section id="error"></section>
+
+    <h2>Cart</h2>
+    <section id="cart">
+    </section>
+
+    <button id="enroll">
+      Enroll Selected Courses
+    </button>
+
+    <button id="remove">
+      Remove Selected Courses
+    </button>
+
+    <section id="confirm-enroll" class="hidden">
+      <p></p>
+      <button class="yes">
+        Yes
+      </button>
+      <button class="no">
+        No
+      </button>
+    </section>
+
+    <section id="results">
+
+    </section>
+
+    <h2>Registered Courses</h2>
+    <section id="registered">
+      <article class="empty">
+        <p>You currently aren't registered for any courses.</p>
+      </article>
+    </section>
+    <button id="drop">
+      Drop Selected Courses
+    </button>
+
+    <section id="confirm-drop" class="hidden">
+      <p></p>
+      <button class="yes">
+        Yes
+      </button>
+      <button class="no">
+        No
+      </button>
+    </section>
+
+    <section id="results2">
+
+    </section>
+
+    <button id="history-btn">
+      View Enrollment History
+    </button>
+    <section id="history-view">
+
+    </section>
+    <section id="settings">
+      <article>
+      <h2>Settings</h2>
+      <h3>Display Options</h3>
+      <span>Toggle Dark Mode</span>
+       <label class="switch" id="toggle-darkmode">
+          <input type="checkbox">
+          <span id="slider"></span>
+        </label>
+      </article>
+      <article id="account">
+        <h3>Accounnt Info</h3>
+        <p>Username: </p>
+        <p>First name: </p>
+        <p>Last name: </p>
+        <h4>Change Password</h4>
+        <p id="err" class="hidden">The new passwords do not match.</p>
+        <p id='changed' class="hidden">Password successfully changed.</p>
+        <form id="change-password" >
+          <label for="old-password">Enter current password:</label>
+          <div>
+          <input id='old-password' name="old-password" type='password' required>
+          <img src="img/show-password.png" rel="toggle-password-display">
+          </div>
+          <label for="new-password">Enter new password:</label>
+          <div>
+          <input id='new-password' name="new-password" type='password' required>
+          <img src="img/show-password.png" rel="toggle-password-display">
+          </div>
+          <label for="confirm-password">Confirm new password:</label>
+          <div>
+          <input id='confirm-password' name="confirm-passwordd" type='password' required>
+          <img src="img/show-password.png" rel="toggle-password-display">
+          </div>
+          <button id='change-btn'>Change password</button>
+        </form>
+      </article>
+    </section>
+  </body>
+</html>

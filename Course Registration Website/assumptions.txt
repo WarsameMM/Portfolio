@@ -1,0 +1,10 @@
+1. Class times can never cross midnight. It would heavily affect schedule conflicts. A possible fix would be to check the days in addition to the times for time conflicts.
+2. Storing credentials as plaintext is very insecure. At least salt and hash the passwords. We should instead allow some third party service like Google to handle this.
+3. Students can be in at most one major. A solution would be to add another table for students and majors.
+4. Majors are by department. No minors and nothing as specific like BS or BA
+5. No signups. All accounts are given
+6. More refined general search returning matching titles and then descriptions
+7. Need to use topological sort on the prerequesites to make sure there aren't any loops
+8. Checking duplicates means checking the offered codes not the class code; sutdents can enroll in the same class at different time
+9. Users are expected to navigate within the site not with the browser so no browser back buttons
+10. Doesn't comply with EU law; there's no notice for what cookies are being stored

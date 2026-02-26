@@ -1,0 +1,30 @@
+/**
+ * Name: Warsame Mahdi
+ * Date: November 2, 2025
+ * Section: CSE 154 AL
+ * TA: Tia-Jane Zhang Fowler
+ * This is the stylesheet for the login page. It sets the pages font, centers all the elements
+ * and styles the error message.
+ */
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  align-self: flex-start;
+}
+
+#error {
+  background-color: red;
+  text-align: center;
+  color: white;
+  padding: 20px 0;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  margin: 0;
+}

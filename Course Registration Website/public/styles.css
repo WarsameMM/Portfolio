@@ -1,0 +1,158 @@
+/**
+ * Name: Warsame Mahdi
+ * Date: November 2, 2025
+ * Section: CSE 154 AL
+ * TA: Tia-Jane Zhang Fowler
+ * This is the stylesheet for the course and login pages. It styles everything from
+ * the header, classes and filters
+ */
+body {
+  font-family: "Roboto", "sans-serif";
+  margin: auto;
+  height: 100vh;
+}
+
+#home {
+  margin: 0;
+}
+
+#home article {
+  display: flex;
+  align-items: center;
+}
+
+#home article > span:not(#slider) {
+  font-size: smaller;
+  white-space: pre-line;
+}
+
+#home img, #login-btn {
+  height: auto;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+#login-btn {
+  font-size: 16px;
+  padding: 5px;
+}
+
+img, button {
+  cursor: pointer;
+}
+
+#home img {
+  width: 50px;
+}
+
+#view img {
+  width: 20px;
+  height: auto;
+  align-self: center;
+}
+
+#filters #view {
+  display: grid;
+  justify-items: center;
+}
+
+#filters span {
+  display: block;
+}
+
+#filters {
+  margin-left: 50px;
+  margin-right: 50px;
+  flex-shrink: 0;
+}
+
+#home {
+  padding: 0;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+}
+
+#home h1 {
+  margin-right: 0px;
+  margin-bottom: 0px;
+}
+
+#search {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 100px;
+  margin-left: 100px;
+  width: 50%;
+}
+
+#classes, .bar, #home, .grid {
+  display: flex;
+}
+
+#classes {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#sign-in {
+  box-shadow: 2px 2px;
+  margin: 20px 0;
+}
+
+#classes section {
+  outline: 2px solid black;
+  align-self: center;
+  margin-inline: auto;
+  max-width: 1850px;
+}
+
+#classes section article {
+  padding: 20px;
+  outline: 1px solid black;
+  margin: 20px;
+}
+
+#classes section article span {
+  font-weight: bold;
+}
+
+.grid {
+  flex-wrap: wrap;
+  width: 70%;
+}
+
+.bar {
+  margin: 20px 0;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.bar {
+  justify-content: center;
+}
+
+.hidden, .hidden span, .hidden label {
+  display: none;
+}
+
+header{
+  text-align: center;
+}
+
+h1 {
+  margin: auto;
+  margin-top: 0%;
+}
+
+#course-view h2 {
+  padding: 10px;
+}
+
+#course-view {
+  margin: 20px;
+}
+
+.list {
+  width: fit-content;
+}

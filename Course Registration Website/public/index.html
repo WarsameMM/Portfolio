@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+  Name: Warasame Mahdi
+  Date: November 2, 2025
+  Section: CSE 154 AB
+  TA: Tia-Jane Zhang Fowler
+  This is the html for the main course page. it has a header with with options for the user,
+  filters and a search bar to sort classes and a button to sort between grid and list view
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>School Class Enrollment website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="display.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+     rel="stylesheet">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <header id="home">
+      <article class="hidden">
+        <span>
+          Change
+          Theme
+        </span>
+        <label class="switch" id="toggle-darkmode">
+            <input type="checkbox">
+            <span id="slider"></span>
+        </label>
+      </article>
+      <h1>Home Page</h1>
+      <button id="login-btn" class="hidden">Log In.</button>
+      <img src="img/profile.png" alt="profile icon">
+    </header>
+    <section id="error">
+
+    </section>
+    <section id="search">
+      <form class="bar">
+        <h2>Select Classes.</h2>
+        <p>
+          Available parameters: name, department, code, first_name, last_name, credits, start, end
+          <br>(e.g department=CSE code=40 start=1330)
+        </p>
+        <input type="search" id="search-input" name="search-input" placeholder="Search...">
+        <button type="submit" id="submit">Search</button>
+
+      </form>
+    </section>
+    <section id="classes">
+      <form id="filters">
+        <div id="view">
+        <p>Toggle List View</p>
+        <img src="img/list-view.png" alt="list icon">
+        </div>
+        <p>Filters:</p>
+        <span>
+          <input type="checkbox" name="filter" value="CSE">
+          <label>Computer Science (CSE)</label>
+        </span>
+        <span>
+          <input type="checkbox" name="filter" value="W">
+          <label>Writing (W)</label>
+        </span>
+        <span>
+          <input type="checkbox" name="filter" value="SS">
+          <label>Social Sciences (SS)</label>
+        </span>
+        <span>
+          <input type="checkbox" name="filter" value="MATH">
+          <label>Math</label>
+        </span>
+        <span>
+          <input type="checkbox" name="filter" value="NSc">
+          <label>Natural Sciences (NSC)</label>
+        </span>
+        <span>
+          <input type="checkbox" name="filter" value="C">
+          <label>Composition (C)</label>
+        </span>
+        <span>
+          <input type="checkbox" name="filter" value="A&H">
+          <label>Arts & Humanities (A&H)</label>
+        </span>
+      </form>
+      <section id="course-view" class="grid">
+        <h2 class="hidden">We couldn't find anything matching your search.</h2>
+      </section>
+    </section>
+  </body>
+</html>

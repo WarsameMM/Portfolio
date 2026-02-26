@@ -1,0 +1,113 @@
+/**
+ * Name: Warsame Mahdi
+ * Date: November 2, 2025
+ * Section: CSE 154 AL
+ * TA: Tia-Jane Zhang Fowler
+ * This is the stylesheet for the account page. It styles the course cart, enrolled courses
+ * button, settings and header.
+ */
+body {
+  font-family: "Roboto", "sans-serif";
+  margin: auto;
+  margin: auto;
+}
+
+header {
+  justify-content: space-between;
+  padding: 20px;
+}
+
+header #home {
+  display: inline-grid;
+  grid-template-rows: auto auto;
+  row-gap: 0.25rem;
+  place-items: center;
+  text-align: center;
+
+}
+
+header div{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+#err {
+  background-color: red;
+  width: fit-content;
+  color: white;
+}
+
+#username {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#cart, #registered, button {
+  margin: 20px;
+}
+
+
+#cart .course, #registered .course {
+  padding: 20px;
+  outline: 1px solid black;
+  margin: 20px;
+  width: fit-content;
+}
+
+header #home img {
+ max-width: 100%;
+  height: auto;
+}
+
+
+header span {
+  display: flex;
+}
+
+header img {
+  cursor: pointer;
+  width: 50px;
+  height: auto;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.course, .empty, .error {
+  padding: 10px;
+  margin: 20px;
+  width: 50%;
+}
+
+h2 {
+  margin-left: 20px;
+}
+
+.error {
+  color: red;
+}
+
+.course {
+  border: 2px solid black;
+}
+
+.selected {
+  border: 7px solid #39275B;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.name {
+  font-size: 18px;
+}
+
+#cart, #registered {
+  border: 2px solid black;
+  min-height: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.hidden {
+  display: none;
+}
