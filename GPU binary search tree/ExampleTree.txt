@@ -1,0 +1,40 @@
+Name: Intel Arc B580
+VRAM: 12GB
+Year Made: 2024
+Price: $250.0
+
+Name: Intel Arc B570
+VRAM: 10GB
+Year Made: 2025
+Price: $220.0
+
+Name: Radeon RX 7600
+VRAM: 8GB
+Year Made: 2023
+Price: $290.0
+
+Name: Nvidia RTX 4060
+VRAM: 8GB
+Year Made: 2023
+Price: $350.0
+
+Name: Radeon RX 7800XT
+VRAM: 16GB
+Year Made: 2023
+Price: $520.0
+
+Name: Radeon RX 7900 GRE
+VRAM: 16GB
+Year Made: 2023
+Price: $570.0
+
+Name: Radeon RX 7900 XTX
+VRAM: 24GB
+Year Made: 2023
+Price: $900.0
+
+Name: Nvidia RTX 4090
+VRAM: 24GB
+Year Made: 2023
+Price: $1600.0
+
