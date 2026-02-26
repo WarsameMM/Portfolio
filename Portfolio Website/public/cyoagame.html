@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<!--
+Name: Warsame Mahdi
+Date: October 8, 2025
+Section: CSE 154 AL
+TA: Tia-Jane Zhang Fowler
+This is the index.html page for my choose your own adventure game. It contains
+the structure and content of the game, and connects a button to a different story.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link href="cyoagame.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap"
+    rel="stylesheet">
+    <script src="cyoagame.js"></script>
+    <title>choose your own adventure!</title>
+  </head>
+  <body>
+    <header>
+      <h1>Choose Your Own Adventure!</h1>
+    </header>
+    <section id="intro">
+      <h2>The setting:</h2>
+      <p>who woke up alone in a beautiful field
+        filled with flowers and butterflies. There are little green goblins frolicking
+        all around you.</p>
+      </section>
+    <section>
+      <article>
+        <p>What do you do?</p>
+        <span class="choice1">1. try to peacefully talk to a goblin. </span>
+        <span class="choice2">2. viciously attack a goblin.</span>
+        <button class="btn-1" data-target="speak1">option 1</button>
+        <button class="btn-2" data-target="attack1">option 2</button>
+      </article>
+      <article class="one invis" id="speak1">
+        <p>As you approach a goblin and you realize two things: first,
+        you do not speak goblin. Second they have little goblin knives. The goblin
+        laughs and starts jabbing at you.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. run. </span>
+        <span class="choice2">2. attack.</span>
+        <button class="btn-1" data-target="run1">option 1</button>
+        <button class="btn-2" data-target="attack1">option 2</button>
+      </article>
+      <article class="invis" id="attack1">
+        <p>You eviscerate a goblin with your Neaderthal kick. There is
+        nothing left of it. An old man goblin has witnessed this and has let out a
+        sound that can only be described as a war cry.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. run. </span>
+        <span class="choice2">2. stand your ground.</span>
+        <button class="btn-1" data-target="run2">option 1</button>
+        <button class="btn-2" data-target="fight-horde">option 2</button>
+      </article>
+      <article class="invis" id="run1">
+        <p>You run for your life while the goblin laughs and chases you. You see a
+        hut and a cave.</p>
+        <p>Which one do you go to?</p>
+        <span class="choice1">1. hut. </span>
+        <span class="choice2">2. cave.</span>
+        <button class="btn-1" data-target="hut">option 1</button>
+        <button class="btn-2" data-target="cave">option 2</button>
+      </article>
+      <article class="invis" id="run2">
+        <p>You run for your life while the goblin horde chases you. You duck and weave as
+          they throw knives, rocks and eachother at you. You see a hut and a cave.</p>
+        <p>Which one do you go to?</p>
+        <span class="choice1">1. hut. </span>
+        <span class="choice2">2. cave.</span>
+        <button class="btn-1" data-target="hut">option 1</button>
+        <button class="btn-2" data-target="cave">option 2</button>
+      </article>
+      <article class="invis" id="fight-horde">
+        <p>you try fighting but there are just too many of them. You are ovewhelmed.</p>
+        <h3>You Lose.</h3>
+        <p>Try Again?</p>
+        <button class="btn-3">restart</button>
+      </article>
+      <article class="invis" id="hut">
+        <p>You stop being followed the minute you enter the swamp. As you approach the hut,
+          you feel goosebumps along your body and a shiver down your spine. You find
+          yourseelf standing at the door.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. knock. </span>
+        <span class="choice2">2. find another way in.</span>
+        <button class="btn-1" data-target="knock">option 1</button>
+        <button class="btn-2" data-target="look1">option 2</button>
+      </article>
+      <article class="invis" id="cave">
+        <p>As you make it into the cave, you finally stop being followed. Here you
+          feel at home. While you might be alone, at least you're safe.</p>
+        <span class="choice1">1. go deeper </span>
+        <span class="choice2">2. make yourself at home.</span>
+        <button class="btn-1" data-target="explore">option 1</button>
+        <button class="btn-2" data-target="camp">option 2</button>
+      </article>
+      <article class="invis" id="look1">
+        <p>As you look around the hut you see two potential entrances. The first is a window
+          where you see a witch standing over a pot. The second is a chimney on top of the building
+        </p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Go through window and rush the witch</span>
+        <span class="choice2">2. Sneak in through chimney</span>
+        <button class="btn-1" data-target="window">option 1</button>
+        <button class="btn-2" data-target="chimney">option 2</button>
+      </article>
+      <article class="invis" id="window">
+        <p>You jump through the window and run at the witch as fast as you can, but
+          they quickly turn around and blow purple powder in your face. The last thing you
+          see before passing out is the witches smile as you pass out. You wake up in the pot
+          you saw her brewing.
+        </p>
+        <p>What do you do?</p>
+        <span class="choice1">1. lash out and attack the witch.</span>
+        <span class="choice2">2. Stay in the pot and accept your fate</span>
+        <button class="btn-1" data-target="attack2">option 1</button>
+        <button class="btn-2" data-target="stay1">option 2</button>
+      </article>
+      <article class="invis" id="chimney">
+        <p>You sneak onto the roof and jump into the chimney. You land into the pot
+          you saw in the window, making the Witch jump at the noise. They turn around
+          and point a wand at you saying "This is perfect! I was going to cook you anyways."</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. attack the witch.</span>
+        <span class="choice2">2. Stay in the pot and accept your fate</span>
+        <button class="btn-1" data-target="attack3">option 1</button>
+        <button class="btn-2" data-target="stay1">option 2</button>
+      </article>
+      <article class="invis" id="knock">
+        <p>You bang on the door like a wild animal, leaving fissures in the wood.
+        The door swings open and you see an angry witch. The second she sees you
+        her anger turns into happiness and she says "I've been waiting for you."
+        right before she blows purple dust in your face knocking you out. You wake
+        up in a pot boiling in the firepit with the witch reading a book across from you.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. lash out and attack the witch.</span>
+        <span class="choice2">2. Stay in the pot and accept your fate</span>
+        <button class="btn-1" data-target="attack2">option 1</button>
+        <button class="btn-2" data-target="stay1">option 2</button>
+      </article>
+      <article class="invis" id="stay1">
+      <p>The witch looks at you lounging in the pot. She points a wand at you and says
+        "Im suprise you woke up. Dare to move and I'll paralyze you! After all this poition
+        calls for an alive Neaderthal."
+      </p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Lunge at her.</span>
+        <span class="choice2">2. Stay.</span>
+        <button class="btn-1" data-target="attack3">option 1</button>
+        <button class="btn-2" data-target="stay2">option 2</button>
+      </article>
+      <article class="invis" id="stay2">
+      <p>The witch looks at you confused and asks "Are you ok? Why aren't you fighting back?"</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Lunge at her.</span>
+        <span class="choice2">2. Stay.</span>
+        <button class="btn-1" data-target="attack3">option 1</button>
+        <button class="btn-2" data-target="stay3">option 2</button>
+      </article>
+      <article class="invis" id="attack3">
+        <p>The witch blasts you with a beam of paralysis. She laughs at you maniacally
+        while you cook.</p>
+        <h3>You Lose.</h3>
+        <p>Try Again?</p>
+        <button class="btn-3">restart</button>
+      </article>
+      <article class="invis" id="stay3">
+      <p>The witch observes the sad look on your face as tears start to well up in her eyes.
+        "Im so sorry I had no idea Neaderthals were capable of such emotional depth.
+        Get out of the pot, I no longer want to cook you." She says as she reaches out her hand</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Take her hand.</span>
+        <span class="choice2">2. Stay.</span>
+        <button class="btn-1" data-target="take">option 1</button>
+        <button class="btn-2" data-target="stay4">option 2</button>
+      </article>
+      <article class="invis" id="stay4">
+      <p>"No really, this isn't a trick." The witch says, hand still extended towards you.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Take her hand.</span>
+        <span class="choice2">2. Stay.</span>
+        <button class="btn-1" data-target="take">option 1</button>
+        <button class="btn-2" data-target="stay5">option 2</button>
+      </article>
+      <article class="invis" id="stay5">
+        <p>"No really, this isn't a trick." The witch says, hand still extended towards you.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Take her hand.</span>
+        <span class="choice2">2. Stay.</span>
+        <button class="btn-1" data-target="take">option 1</button>
+        <button class="btn-2" data-target="stay6">option 2</button>
+      </article>
+      <article class="invis" id="stay6">
+        <img src="img/dissapointed.png" alt="dissapointed dog.">
+        <p>What do you do?</p>
+        <span class="choice1">1. Take her hand.</span>
+        <span class="choice2">2. Stay.</span>
+        <button class="btn-1" data-target="take">option 1</button>
+        <button class="btn-2" data-target="stay7">option 2</button>
+      </article>
+      <article class="invis" id="take">
+      <p>The witch helps you out of the pot, wipes the tears out of her eyes and
+        heads back to her book. After putting some things together, a portal is produced.
+        the witch says "This portal is to your cave. Go back to your family and live a long
+        happy life."
+      </p>
+        <span class="choice1">1. Go.</span>
+        <span class="choice2">2. Stay.</span>
+        <button class="btn-1" data-target="go">option 1</button>
+        <button class="btn-2" data-target="become-witch1">option 2</button>
+      </article>
+      <article class="invis" id="become-witch1">
+        <p>As you back away from the portal and shake your head, the Witch looks at you
+        for a second, first confused then with excitement. "I've been looking for a deciple!"
+        the witch exclaims. You will become all-powerful.</p>
+        <h3>You Win!</h3>
+        <p>Try Again?</p>
+        <button class="btn-3">restart</button>
+      </article>
+      <article class="invis" id="stay7">
+        <p>The witch softly says "I understand." as she turns around and walks away
+        with her head down. You cook to death.</p>
+        <h3>You Lose.</h3>
+        <p>Try Again?</p>
+        <button class="btn-3">restart</button>
+      </article>
+      <article class="invis" id="attack2">
+        <p>You throw yourself out of the pot and before the witch can even turn around you
+        Neaderthal punch her head smooth off. Now that your rage has subsided you stand over
+        the witches book.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Read the book.</span>
+        <span class="choice2">2. Look around.</span>
+        <button class="btn-1" data-target="read1">option 1</button>
+        <button class="btn-2" data-target="look2">option 2</button>
+      </article>
+      <article class="invis" id="read1">
+        <p>You cannot read.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Leave to the cave you saw earlier.</span>
+        <span class="choice2">2. Look around.</span>
+        <button class="btn-1" data-target="leave">option 1</button>
+        <button class="btn-2" data-target="look2">option 2</button>
+      </article>
+      <article class="invis" id="look2">
+        <p>After looking around you find some bottles filled with brown liquid.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Drink.</span>
+        <span class="choice2">2. Leave to the cave you saw earlier.</span>
+        <button class="btn-1" data-target="drink1">option 1</button>
+        <button class="btn-2" data-target="leave">option 2</button>
+      </article>
+      <article class="invis" id="drink1">
+        <p>You drink the potion, which makes your tongue a little numb and calms you down.
+        You find another poition but this time its green.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Drink.</span>
+        <span class="choice2">2. Leave to the cave you saw earlier.</span>
+        <button class="btn-1" data-target="drink2">option 1</button>
+        <button class="btn-2" data-target="leave">option 2</button>
+      </article>
+      <article class="invis" id="drink2">
+        <p>You drink the potion and read the label. It says "Reading Potion".</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Read the book.</span>
+        <span class="choice2">2. Read the first poition you drank.</span>
+        <button class="btn-1" data-target="read2">option 1</button>
+        <button class="btn-2" data-target="read3">option 2</button>
+      </article>
+      <article class="invis" id="read3">
+        <p>The label on the poition says "Kava".</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Read the book</span>
+        <span class="choice2">2. Leave to the cave you saw earlier.</span>
+        <button class="btn-1" data-target="read2">option 1</button>
+        <button class="btn-2" data-target="leave">option 2</button>
+      </article>
+      <article class="invis" id="read2">
+        <p>As you read the book, you realize the witch was going to turn you into a
+        strength poition. You also read how to set up the ritual with exact mesurements.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Do the ritual percisely.</span>
+        <span class="choice2">2. Forget the mesurements and throw the ingredients together</span>
+        <button class="btn-1" data-target="ritual1">option 1</button>
+        <button class="btn-2" data-target="boom">option 2</button>
+      </article>
+      <article class="invis" id="ritual1">
+        <p>You successfully replicate the ritual and stand before a portal to your home.</p>
+        <p>What do you do?</p>
+        <span class="choice1">1. Go</span>
+        <span class="choice2">2. Stay</span>
+        <button class="btn-1" data-target="go">option 1</button>
+        <button class="btn-2" data-target="become-witch2">option 2</button>
+      </article>
+      <article class="invis" id="become-witch2">
+        <p>You find magic too alluring to not explore. You decide to stay and hone your
+        magic skills to become an all-powerful Neaderthal witch.</p>
+        <h3>You Win!</h3>
+        <p>Try Again?</p>
+        <button class="btn-3">restart</button>
+      </article>
+      <article class="invis" id="go">
+        <p>You step through the portal and find yourself in your cave. You see your
+        Neaderthal family still fast asleep. It looks like not a moment has passed since
+        you were gone. You are happy.</p>
+        <h3>You Win!</h3>
+        <p>Try Again?</p>
+        <button class="btn-3">restart</button>
+      </article>
+      <article class="invis" id="boom">
+        <img src="img/boom.png" alt="Explosion">
+        <h3>You Lose.</h3>
+        <p>Try Again?</p>
+        <button class="btn-3">restart</button>
+      </article>
+      <article class="invis" id="leave">
+        <p>You leave to the cave you saw on your way to the hut. Here you
+          feel at home. While you might be alone, at least you're safe.</p>
+        <span class="choice1">1. go deeper </span>
+        <span class="choice2">2. make yourself at home.</span>
+        <button class="btn-1" data-target="explore">option 1</button>
+        <button class="btn-2" data-target="camp">option 2</button>
+      </article>
+      <article class="invis" id="explore">
+        <p>You venture deeper into the cave. As you go deeper, it becomes too dark to see
+          and you trip over a rock, tumbling down the cave. When you finally stop you find a pale
+          goblin holding a glowing red rock staring at you.</p>
+        <span class="choice1">1. attack the goblin.</span>
+        <span class="choice2">2. talk to the goblin.</span>
+        <button class="btn-1" data-target="ash">option 1</button>
+        <button class="btn-2" data-target="speak2">option 2</button>
+      </article>
+      <article class="invis" id="speak2">
+        <p>At first the goblin looks at you confused but then it whispers something to
+          its red stone. The stone glows blindingly bright and the goblin starts speaking
+          your language. "Are you after my stone?" is all it says.</p>
+        <span class="choice1">1. yes.</span>
+        <span class="choice2">2. no.</span>
+        <button class="btn-1" data-target="ash">option 1</button>
+          <button class="btn-2" data-target="no">option 2</button>
+        </article>
+        <article class="invis" id="no">
+          <p>"Good. Very good because you cannot have it" The goblin says holding the
+          stone close to its chest. A rock falls behind the goblin, making it jump
+          and turn around.</p>
+          <span class="choice1">1. attack the goblin.</span>
+          <span class="choice2">2. Ask about the stone.</span>
+          <button class="btn-1" data-target="ash">option 1</button>
+          <button class="btn-2" data-target="speak3">option 2</button>
+        </article>
+        <article class="invis" id="speak3">
+          <p>The goblin says "why do you want to know?!?" as it stares at you intensly.
+          after a moment it finally says "This stone grants me any wish. Im warning you.
+          You need to leave now."</p>
+          <p>What do you do?</p>
+          <span class="choice1">1. attack the goblin.</span>
+          <span class="choice2">2. Ask to be sent home.</span>
+          <button class="btn-1" data-target="ash">option 1</button>
+          <button class="btn-2" data-target="home">option 2</button>
+        </article>
+        <article class="invis" id="home">
+          <p>The goblin stares at you and whispers into the stone. You immediately find
+          yourself in your cave. You see your Neaderthal family still fast asleep.
+          It looks like not a moment has passed since you were gone. You are happy.</p>
+        <h3>You Win!</h3>
+        <p>Try Again?</p>
+        <button class="btn-3">restart</button>
+      </article>
+        <button class="btn-3">restart</button>
+      <article class="invis" id="camp">
+        <p>You try to make yourself at home here. You gather wood outside for fires
+        and make yourself stone tools for hunting. While you miss your Neaderthal family,
+        here you'll be able to live the rest for your days.</p>
+        <h3>You Win?</h3>
+        <p>Try Again?</p>
+        <button class="btn-3">restart</button>
+      </article>
+      <article class="invis" id="ash">
+        <p>You disintegrate.</p>
+        <img src="img/ashbaby.png" alt="disintegrating">
+        <h3>You Lose.</h3>
+        <p>Try Again?</p>
+        <button class="btn-3">restart</button>
+      </article>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "cp4-node-api-wmmahdi",
+  "version": "1.0.0",
+  "description": "For your fourth Creative Project, you will create your own Node.js web service available for use with AJAX and fetch. Once again, as a Creative Project, you have freedom to have more ownership in your work, as long as you meet the requirements listed below.",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.cs.washington.edu/cse154-25au-students/cp4-node-api-wmmahdi.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  }
+}

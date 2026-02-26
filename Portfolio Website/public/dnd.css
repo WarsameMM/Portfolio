@@ -1,0 +1,46 @@
+/**
+ * Name: Warsame Mahdi
+ * Date: October 22, 2025
+ * Section: CSE 154 AL
+ * TA: Tia-Jane Zhang Fowler
+ * This is the stylesheet to style the DND character generator. It sets the background,
+ * aligns the text in the middle and sets their color.
+ */
+
+header, #spell h2 {
+  text-shadow: 2px 2px 4px #000000;
+  color: rgb(233, 0, 0);
+}
+
+.error {
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+p {
+  white-space: pre-line;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.invis {
+  display: none;
+}
+
+body {
+  background-image: url("img/dndbackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "MedievalSharp", cursive;
+  font-style: italic;
+  text-align: center;
+}

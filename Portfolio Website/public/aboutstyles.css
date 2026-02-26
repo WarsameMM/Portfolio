@@ -1,0 +1,29 @@
+/*
+  Name: Warasame Mahdi
+  Date: 9/27/25
+  Section: CSE 154 AB
+  TA: Tia-Jane Zhang Fowler
+  This is the styles.css page for my autobiography and pc building portfolio websites.
+  It is utilized by all my pages and has a sleek purple and black theme.
+*/
+body {
+  background-color: rgb(156, 166, 243);
+  font-family: "Volkhov", sans-serif;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.lists {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1, .intro {
+  text-align: center;
+}
+
+img {
+  width: 600px;
+  border: solid rgb(156, 166, 243) 10px;
+}

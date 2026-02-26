@@ -1,0 +1,28 @@
+/*
+  Name: Warasame Mahdi
+  Date: 9/27/25
+  Section: CSE 154 AB
+  TA: Tia-Jane Zhang Fowler
+  This is the pcstyle.css page for my pc building portfolio website. It is specifically used
+  by the pcbuilding.html and retains a similar style to the about.html while ordering elements
+  in an organized manner.
+*/
+#pclist {
+  display: flex;
+}
+
+article p {
+  padding: 10px;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  border: solid rgb(156, 166, 243) 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+h2, h3 {
+  text-align: center;
+}

@@ -1,0 +1,55 @@
+/**
+ * Name: Warsame Mahdi
+ * Date: October 22, 2025
+ * Section: CSE 154 AL
+ * TA: Tia-Jane Zhang Fowler
+ * This is the stylesheet to style the main homepage for my website portfolio.
+ * It sets the background, alligns all the content of the page, designs the
+ * buttons and handles what errors look like amoung other things.
+ */
+
+header {
+  text-decoration: double;
+}
+
+.error {
+  color: red;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+section {
+  display: grid;
+  justify-content: space-around;
+}
+
+button {
+  cursor: pointer;
+}
+
+section > button {
+  border-radius: 12px;
+  transition-duration: 0.5s;
+  border: 2px solid #555555;
+  padding: 20px;
+  margin: 30px;
+}
+
+p {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+section > button:hover {
+  background-color: #555555;
+  color: white;
+}
+
+body {
+  text-align: center;
+  background-color: #8A9A5B;
+}
+
+.invis {
+  display: none;
+}
