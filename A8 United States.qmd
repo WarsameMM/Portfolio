@@ -1,0 +1,155 @@
+---
+title: "A8: US States"
+author: "Warsame Mahdi"
+format: html
+editor: visual
+---
+
+```{r}
+#| echo: false
+#| include: false
+library("tidyverse")
+library("readr")
+library("dplyr")
+library("stringr")
+library("plotly")
+library("ggplot2")
+library("scales")
+```
+
+## My Dataset
+
+```{r}
+us_df <- read.csv("us_states_df.csv")
+print(us_df)
+
+```
+
+# Two Maps
+
+## Map 1: USA States, Territories and Tribal Nations Information Map
+
+```{r}
+
+st_df <- map_data("state") 
+
+classify_group <- function(cat) {
+  cat <- str_to_lower(cat)
+  case_when(
+    cat == "state" ~ "State",
+    str_detect(cat, "federal district") ~ "Federal district",
+    str_detect(cat, "tribal nation") ~ "Tribal nation",
+    str_detect(cat, "unincorporated territory *\\(unorganized\\)") ~ "Unorganized unincorporated territory",
+    str_detect(cat, "unincorporated territory *\\(organized\\)") ~ "Organized unincorporated territory",
+    str_detect(cat, "commonwealth|unincorporated territory *\\(commonwealth\\)") ~ "Territory/Commonwealth",
+    TRUE ~ "Other"
+  )
+}
+
+us_df <- us_df |>
+  mutate(
+    Group = classify_group(Category),
+    pop_2025_estimate = as.numeric(pop_2025_estimate)
+  )
+
+min_px <- 5
+max_px <- 40
+size_var <- sqrt(us_df$pop_2025_estimate)
+marker_size <- rescale(size_var, to = c(min_px, max_px), from = range(size_var, na.rm = TRUE))
+
+us_df <- us_df |>
+  mutate(hover = paste0(
+    "<b>", Name, "</b>",
+    "<br>Category: ", Category,
+    "<br>Capital/Admin: ", Capital_or_Admin_Center,
+    "<br>Pop 2020: ", format(pop_2020_census, big.mark = ","),
+    "<br>Pop 2025: ", format(pop_2025_estimate, big.mark = ",")
+  ))
+
+territory_map <- plot_ly(
+  data = us_df,
+  type = "scattergeo",
+  mode = "markers",
+  lat = ~Latitude,
+  lon = ~Longitude,
+  text = ~hover,
+  hoverinfo = "text",
+  marker = list(size = marker_size, line = list(width = 0.5, color = "#333")),
+  color = ~Group,
+  colors = "Set2"
+  ) |>
+  layout(
+    title = "Information on all U.S. States including some Territories and Tribal Nations",
+    geo = list(
+      projection = list(type = "natural earth"),
+      showland = TRUE, landcolor = "#f0efe9",
+      showcountries = TRUE, countrycolor = "#a0a0a0"
+    ),
+    legend = list(title = list(text = "Group"))
+  )
+
+territory_map <- territory_map |>
+  add_trace(
+    type = "scattergeo",
+    mode = "lines",
+    lon = st_df$long,
+    lat = st_df$lat,
+    split = st_df$group,
+    line = list(color = "rgba(20,20,20,0.35)", width = 0.5),
+    hoverinfo = "skip",
+    showlegend = FALSE,
+    inherit = FALSE,
+    connectgaps = FALSE,
+    fill = "none"
+  )
+
+
+
+territory_map
+```
+
+## Map 2: USA States population growth map
+
+```{r}
+
+states_df <- us_df |> filter(Category == "State")
+
+name_to_abb <- tibble::tibble(Name = state.name, code = state.abb)
+
+states_df <- states_df |>
+  left_join(name_to_abb, by = "Name") |>
+  mutate(
+    pop_2020_census = as.numeric(pop_2020_census),
+    pop_2025_estimate = as.numeric(pop_2025_estimate),
+    per_change = round(100 * (pop_2025_estimate - pop_2020_census) / pop_2020_census, 2)
+  )
+
+pop_change_map <- plot_ly(
+  data = states_df,
+  type = "choropleth",
+  locations = ~code,
+  locationmode = "USA-states",
+  z = ~per_change,
+  colorscale = "RdYlGn",
+  colorbar = list(title = "% change"),
+  text = ~paste0(
+    "<b>", Name, "</b>",
+    "<br>Pop 2020: ", format(pop_2020_census, big.mark = ","),
+    "<br>Pop 2025: ", format(pop_2025_estimate, big.mark = ",", scientific = FALSE),
+    "<br><b>% change:</b> ", paste0(per_change, "%")
+  ),
+  hoverinfo = "text"
+) %>%
+  layout(
+    title = "Population change in the USA between 2020 and 2025 (Based on US Census)",
+    geo = list(scope = "usa")
+  )
+
+pop_change_map
+```
+
+# Reflection
+
+1.  What I found most interesting was the amount of US territories as well as the different types. When looking for extra data I kept finding new classifications for territories I've never heard of before.
+2.  What I found most challenging was learning all the different code and packages for maps. I cycled through several options and had to constantly research how to do different functions.
+3.  It made me consider how hard it is to compile complete data. The more columns you add, the harder it is to make sure you have that data for every row. When I was searching for datasets for the group project, I found myself becoming annoyed with the amount of blank data i was finding scattered throughout them, but now I\`m more understanding and patient with blank data.
